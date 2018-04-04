@@ -1,6 +1,7 @@
 # Angular-Extended-Weekend-Assignement
 
 As a capstone to your AngularJS work, you'll be making a solo project in an extended weekend fashion. 
+You'll be flexing every code muscle you've built so far!
 We've provided 3 projects for you to choose from. There is no code provided, save for a readme. 
 You will be making everything from scratch. 
 
