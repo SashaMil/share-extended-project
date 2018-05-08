@@ -31,7 +31,7 @@ Steps:
 1) Try Debugging, Reading Errors
 2) Google a question
 3) Ask a neighbor
-4) Ask an instructor / Write your name on the queue
+4) Write your name on the queue (an instructor will help when available)
 
 ## THE NEXT TWO SCHOOL DAYS
 
