@@ -12,6 +12,8 @@
     <script src="vendors/angular-route.min.js"></script>
     <script src="vendors/angular-material.min.js"></script>
     <script src="scripts/client.js"></script>
+    <script type="text/javascript" src="scripts/controllers/home.controller.js"></script>
+    <script type="text/javascript" src="scripts/controllers/page2.controller.js"></script>
   </head>
 
   <br>
@@ -21,7 +23,7 @@
     <md-content class="md-padding">
       <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
         <md-nav-item md-nav-href="/" name="home">Home</md-nav-item>
-
+        <md-nav-item md-nav-href="#!/page2" name="page2">Page 2</md-nav-item>
         <ng-view>
         </ng-view>
 
