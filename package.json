@@ -1,0 +1,31 @@
+{
+  "name": "angular-extended-weekend-assignment",
+  "version": "1.0.0",
+  "description": "As a capstone to your AngularJS fullstack work, you'll be making a solo project in an extended weekend fashion.  You'll be flexing every code muscle you've built so far!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SashaMil/angular-extended-weekend-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SashaMil/angular-extended-weekend-assignment/issues"
+  },
+  "homepage": "https://github.com/SashaMil/angular-extended-weekend-assignment#readme",
+  "dependencies": {
+    "angular": "^1.7.2",
+    "angular-animate": "^1.7.2",
+    "angular-aria": "^1.7.2",
+    "angular-material": "^1.1.9",
+    "angular-messages": "^1.7.2",
+    "angular-route": "^1.7.2",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}

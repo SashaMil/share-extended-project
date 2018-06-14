@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Project</title>
+    <link rel="stylesheet" href="styles/angular-material.min.css">
+    <link rel="stylesheet" href="styles/styleSheet.css">
+    <script src="vendors/angular.min.js"></script>
+    <script src="vendors/angular-aria.min.js"></script>
+    <script src="vendors/angular-animate.min.js"></script>
+    <script src="vendors/angular-messages.min.js"></script>
+    <script src="vendors/angular-route.min.js"></script>
+    <script src="vendors/angular-material.min.js"></script>
+    <script src="scripts/client.js"></script>
+  </head>
+
+  <br>
+
+  <body ng-app="movieApp">
+
+    <md-content class="md-padding">
+      <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-href="/" name="home">Home</md-nav-item>
+
+        <ng-view>
+        </ng-view>
+
+      </md-nav-bar>
+    </md-content>
+
+  </body>
+
+</html>
