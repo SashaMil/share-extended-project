@@ -5,7 +5,8 @@ movieApp.controller('homeController', function(apiService, dataBaseService) {
   vm.getMovieData = function(searchInput) {
     apiService.omdbSearchRequest(searchInput)
       .then(function(data) {
-        vm.movieInfo = apiService.omdbSearchRequestResult;
+        vm.movieInfo = apiService.omdbSearchRequestResult.data.Search;
+        vm.youtubeSearch(searchInput);
         console.log(vm.movieInfo);
       })
   }
@@ -15,7 +16,6 @@ movieApp.controller('homeController', function(apiService, dataBaseService) {
     apiService.youtubeSearchRequest(searchInput)
       .then(function(data) {
         vm.video = apiService.youtubeSearchRequestResult.data.items;
-        vm.getMovieData(searchInput);
       })
   }
 
