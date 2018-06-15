@@ -19,13 +19,20 @@
   },
   "homepage": "https://github.com/SashaMil/angular-extended-weekend-assignment#readme",
   "dependencies": {
+    "@angular/core": "^6.0.5",
+    "@types/angular": "^1.6.47",
     "angular": "^1.7.2",
     "angular-animate": "^1.7.2",
     "angular-aria": "^1.7.2",
+    "angular-cli": "^1.0.0-beta.28.3",
     "angular-material": "^1.1.9",
     "angular-messages": "^1.7.2",
     "angular-route": "^1.7.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "@angular/cli": "^6.0.8",
+    "typescript": "^2.9.2"
   }
 }

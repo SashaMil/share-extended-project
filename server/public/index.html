@@ -20,15 +20,16 @@
 
   <body ng-app="movieApp">
 
-    <md-content class="md-padding">
+    <!-- Nav Bar Declaration -->
+    <md-content class="md-padding" md-theme="docs-dark">
       <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
         <md-nav-item md-nav-href="/" name="home">Home</md-nav-item>
         <md-nav-item md-nav-href="#!/display" name="display">Your Movies</md-nav-item>
-        <ng-view>
-        </ng-view>
-
       </md-nav-bar>
     </md-content>
+
+    <ng-view>
+    </ng-view>
 
   </body>
 

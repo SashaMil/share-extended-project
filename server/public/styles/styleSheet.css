@@ -1,0 +1,8 @@
+.movieInput-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.movieInput-container > * {
+  width: 100%;
+}

@@ -1,6 +1,9 @@
-const movieApp = angular.module('movieApp', ['ngRoute', 'ngMaterial']);
+const movieApp = angular.module('movieApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
-movieApp.config(function($routeProvider) {
+movieApp.config(function($routeProvider, $mdThemingProvider) {
+  $mdThemingProvider.theme('docs-dark', 'default')
+   .primaryPalette('pink')
+   .dark()
   $routeProvider.when('/', {
     templateUrl: '/views/home.html'
   }).when('/display', {
