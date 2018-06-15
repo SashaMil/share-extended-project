@@ -28,8 +28,19 @@
     "angular-material": "^1.1.9",
     "angular-messages": "^1.7.2",
     "angular-route": "^1.7.2",
+    "angularjs-datepicker": "^2.1.23",
     "body-parser": "^1.18.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "imdb-api": "^3.1.2",
+    "videogular": "^2.2.1",
+    "videogular-angulartics": "^1.4.4",
+    "videogular-buffering": "^1.4.4",
+    "videogular-controls": "^1.4.4",
+    "videogular-dash": "^1.4.4",
+    "videogular-ima-ads": "^1.4.4",
+    "videogular-overlay-play": "^1.4.4",
+    "videogular-poster": "^1.4.4",
+    "videogular-themes-default": "^1.4.4"
   },
   "devDependencies": {
     "@angular/cli": "^6.0.8",

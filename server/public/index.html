@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Movie Project</title>
-    <link rel="stylesheet" href="styles/angular-material.min.css">
+    <link rel="stylesheet" href="styles/angular-material.css">
     <link rel="stylesheet" href="styles/styleSheet.css">
+    <!-- <script type="text/javascript" src="scripts/modules/sceDelegateProvider.module.js"></script> -->
     <script src="vendors/angular.min.js"></script>
     <script src="vendors/angular-aria.min.js"></script>
     <script src="vendors/angular-animate.min.js"></script>
@@ -14,6 +15,8 @@
     <script src="scripts/client.js"></script>
     <script type="text/javascript" src="scripts/controllers/home.controller.js"></script>
     <script type="text/javascript" src="scripts/controllers/displayMovies.controller.js"></script>
+    <script type="text/javascript" src="scripts/services/dataBase.service.js"></script>
+    <script type="text/javascript" src="scripts/services/api.service.js"></script>
   </head>
 
   <br>
@@ -21,7 +24,7 @@
   <body ng-app="movieApp">
 
     <!-- Nav Bar Declaration -->
-    <md-content class="md-padding" md-theme="docs-dark">
+    <md-content class="md-padding">
       <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
         <md-nav-item md-nav-href="/" name="home">Home</md-nav-item>
         <md-nav-item md-nav-href="#!/display" name="display">Your Movies</md-nav-item>

@@ -1,9 +1,13 @@
 const movieApp = angular.module('movieApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
-movieApp.config(function($routeProvider, $mdThemingProvider) {
-  $mdThemingProvider.theme('docs-dark', 'default')
-   .primaryPalette('pink')
-   .dark()
+movieApp.config(function($routeProvider, $sceDelegateProvider, $mdThemingProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    'self',
+    'https://www.youtube.com/**'
+  ]);
+  $mdThemingProvider.theme('default')
+   .primaryPalette('red')
+   .dark();
   $routeProvider.when('/', {
     templateUrl: '/views/home.html'
   }).when('/display', {

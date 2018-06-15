@@ -1,33 +1,30 @@
 <div ng-controller="homeController as vm" layout="column" ng-cloak class="md-inline-form">
-  <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+
+  <md-content layout-padding md-theme="default">
     <div>
-      <md-input-container>
-        <label>Title</label>
-        <input ng-model="user.title">
-      </md-input-container>
-
-      <md-input-container>
-        <label>Email</label>
-        <input ng-model="user.email" type="email">
-      </md-input-container>
-    </div>
-  </md-content>
-
-  <md-content layout-padding md-theme="docs-dark">
-    <div>
-      <form name="userForm">
-
-        <div layout-gt-xs="row">
-          <md-input-container class="md-block" flex-gt-xs>
-            <label>Company (Disabled)</label>
-            <input ng-model="user.company" disabled>
+      <form name="movieInputForm">
+        <div layout-xs="row">
+          <md-input-container>
+            <label>Title</label>
+            <input ng-model="vm.title">
           </md-input-container>
 
           <md-input-container>
+            <md-button class="md-primary" ng-click="vm.youtubeSearch(vm.title)">Search</button>
+          </md-input-container>
+        </div>
+        <!-- <div layout-gt-xs="row">
+          <md-input-container>
+            <label>Title</label>
+            <input ng-model="vm.title">
+            <button type="button" ng-click="vm.youtubeSearch(vm.title)">Search</button>
+          </md-input-container> -->
+
+          <!-- <md-input-container>
             <label>Enter date</label>
             <md-datepicker ng-model="user.submissionDate"></md-datepicker>
           </md-input-container>
-        </div>
+        </div> -->
 
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
@@ -90,6 +87,20 @@
       </form>
     </div>
   </md-content>
+
+  <div class="video-player">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item"
+        ng-src={{vm.playVideo(vm.video[0].id.videoId)}}
+        allowFullScreen>
+        </iframe>
+    </div>
+    <div class="video-player-details">
+      <h3>{{ vm.video.snippet.title }}</h3>
+      <div>{{ vm.video.snippet.description}}</div>
+    </div>
+  </div>
+
 
 
 
