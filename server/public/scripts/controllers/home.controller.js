@@ -1,14 +1,17 @@
-movieApp.controller('homeController', function(apiService, dataBaseService) {
+movieApp.controller('homeController', function(apiService, dataBaseService, $q) {
   let vm = this;
   vm.currentNavItem = 'home';
 
   vm.getMovieData = function(searchInput) {
     apiService.omdbSearchRequest(searchInput)
       .then(function() {
-        vm.movieInfo = apiService.omdbSearchRequestResult;
-        vm.youtubeSearch(searchInput);
+        vm.movieInfo = apiService.omdbSearchRequestResult.data.Search;
+        // vm.youtubeSearch(searchInput);
+
+
         console.log(vm.movieInfo);
       })
+      return vm.movieInfo;
   }
 
   vm.youtubeSearch = function(searchInput) {

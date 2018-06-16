@@ -13,35 +13,34 @@
 
 
           <!-- Autocomplete -->
-        <!-- <md-autocomplete
+        <md-autocomplete
           md-input-name="autocompleteField"
           md-input-minlength="2"
           md-input-maxlength="30"
           md-no-cache="vm.noCache"
           md-selected-item="vm.selectedItem"
-          md-search-text="vm.searchText"
-          md-items="item in vm.getMovieData(vm.searchText)"
+          md-search-text="vm.title"
+          md-items="item in vm.getMovieData(vm.title)"
           md-item-text="item.Title"
           md-min-length="4"
           md-dropdown-items="5"
-          md-search-text-change="vm.getMovieData(vm.searchText)"
           md-floating-label="Search by Title">
           <md-item-template>
-            <span md-highlight-text="vm.searchText">{{item.Title}}</span>
+            <span md-highlight-text="vm.title">{{item.Title}}</span>
           </md-item-template>
           <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
             <div ng-message="md-require-match">Please select an existing state.</div>
             <div ng-message="minlength">Your entry is not long enough.</div>
             <div ng-message="maxlength">Your entry is too long.</div>
           </div>
-        </md-autocomplete> -->
+        </md-autocomplete>
 
       </div>
     </form>
 
     <!-- Submit Input Button -->
     <md-input-container>
-      <md-button class="md-primary" ng-click="vm.getMovieData(vm.title)">Search</button>
+      <!-- <md-button class="md-primary" ng-click="vm.getMovieData(vm.title)">Search</button> -->
     </md-input-container>
 
   </md-content>

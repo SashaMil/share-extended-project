@@ -31,7 +31,6 @@ movieApp.service('apiService', function($http) {
     })
     .then(function(response) {
       vm.omdbSearchRequestResult = response;
-      console.log(vm.omdbSearchRequestResult)
     })
     .catch(function(error) {
       console.log(`Error getting OMDB Search Result ${error}`);
