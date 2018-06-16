@@ -9,13 +9,11 @@
             <input ng-model="vm.title">
           </md-input-container>
 
-          <md-input-container>
-            <md-button class="md-primary" ng-click="vm.getMovieData(vm.title)">Search</button>
-          </md-input-container>
+
 
 
           <!-- Autocomplete -->
-        <md-autocomplete flex="100"
+        <!-- <md-autocomplete
           md-input-name="autocompleteField"
           md-input-minlength="2"
           md-input-maxlength="30"
@@ -24,8 +22,9 @@
           md-search-text="vm.searchText"
           md-items="item in vm.getMovieData(vm.searchText)"
           md-item-text="item.Title"
-          md-min-length="2"
-          md-require-match
+          md-min-length="4"
+          md-dropdown-items="5"
+          md-search-text-change="vm.getMovieData(vm.searchText)"
           md-floating-label="Search by Title">
           <md-item-template>
             <span md-highlight-text="vm.searchText">{{item.Title}}</span>
@@ -35,7 +34,7 @@
             <div ng-message="minlength">Your entry is not long enough.</div>
             <div ng-message="maxlength">Your entry is too long.</div>
           </div>
-        </md-autocomplete>
+        </md-autocomplete> -->
 
       </div>
     </form>
