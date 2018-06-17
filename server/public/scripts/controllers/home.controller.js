@@ -7,21 +7,18 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
   //   vm.getMovieData();
   // },1000);
 
+  vm.searchText = null;
+
+
   vm.getMovieData = function(searchText) {
-    let results = apiService.omdbSearchRequest(vm.searchText);
+    let results = searchText ? apiService.omdbSearchRequest(vm.searchText): [];
     let deferred = $q.defer();
-      $timeout(function () {
-        deferred.resolve(results);
-      }, Math.random() * 1000, false);
+    $timeout(function () {
+      deferred.resolve(results);
+    },1000, false);
+      console.log(deferred.promise);
       return deferred.promise;
 
-
-    // apiService.omdbSearchRequest(vm.searchText)
-    //   .then(function() {
-    //     console.log(vm.searchText);
-    //     vm.movieInfo = apiService.omdbSearchRequestResult.data.Search;
-    //     console.log(vm.movieInfo);
-    //   })
   }
 
   vm.youtubeSearch = function(searchInput) {
@@ -35,6 +32,8 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
   vm.playVideo = function(id) {
     return 'https://www.youtube.com/embed/' + id;
   }
+
+
 
 
 

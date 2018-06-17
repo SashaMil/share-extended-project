@@ -39,11 +39,13 @@ movieApp.service('apiService', function($http) {
     })
     .then(function(response) {
       console.log(response);
-      vm.omdbSearchRequestResult = response;
+      vm.omdbSearchRequestResult = response.data.Search;
+      console.log(vm.omdbSearchRequestResult);
       return vm.omdbSearchRequestResult;
     })
     .catch(function(error) {
       console.log(`Error getting OMDB Search Result ${error}`);
+      return [];
     })
   }
 })
