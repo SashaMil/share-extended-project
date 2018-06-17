@@ -9,6 +9,10 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
 
   vm.searchText = null;
 
+  vm.test = function() {
+    console.log('hello');
+  }
+
 
   vm.getMovieData = function(searchText) {
     let results = searchText ? apiService.omdbSearchRequest(vm.searchText): [];
@@ -16,13 +20,10 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
     $timeout(function () {
       deferred.resolve(results);
     },200, false);
-      console.log(deferred.promise);
-      // if (deferred.promise.$$state.value === undefined) {
-      //   return [];
-      // }
-    return deferred.promise;
-
+      return deferred.promise;
   }
+
+
 
   vm.youtubeSearch = function(searchInput) {
     console.log(searchInput);
@@ -35,6 +36,7 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
   vm.playVideo = function(id) {
     return 'https://www.youtube.com/embed/' + id;
   }
+
 
 
 

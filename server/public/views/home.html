@@ -14,16 +14,16 @@
         <md-autocomplete
           md-input-name="autocompleteField"
           md-input-minlength="2"
-          md-input-maxlength="30"
+          md-input-maxlength="100"
           md-no-cache="vm.noCache"
           md-selected-item="vm.selectedItem"
           md-search-text="vm.searchText"
           md-items="item in vm.getMovieData(vm.searchText)"
           md-item-text="item.Title"
-          md-min-length="5"
+          md-min-length="3"
           md-floating-label="Search by Title">
           <md-item-template>
-            <span md-highlight-text="vm.searchText">{{item.Title}}</span>
+            <span ng-click="vm.test()" md-highlight-text="vm.searchText">{{item.Title}}</span>
           </md-item-template>
           <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
             <div ng-message="md-require-match">Please select an existing state.</div>
@@ -32,13 +32,25 @@
           </div>
         </md-autocomplete>
 
+        <md-list>
+          <label>Year of Release</label>
+          <p>{{vm.selectedItem}}</p>
+          <br>
+          <label>Poster</label>
+          <img src="{{vm.selectedItem.Poster}}" alt="">
+      <!-- <md-button class="md-primary" ng-click="vm.getMovieData(vm.title)">Search</button> -->
+        </md-list>
+
+
+
       </div>
     </form>
 
     <!-- Submit Input Button -->
-    <md-input-container>
+        <md-input-container>
+
       <!-- <md-button class="md-primary" ng-click="vm.getMovieData(vm.title)">Search</button> -->
-    </md-input-container>
+        </md-input-container>
 
   </md-content>
 
