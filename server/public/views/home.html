@@ -2,14 +2,12 @@
 
   <!-- Input form with autocomplete -->
   <md-content layout-padding md-theme="default">
-    <form name="movieInputForm">
+    <form name="searchForm" ng-submit="$event.preventDefault()">
       <div layout-xs="row">
-          <md-input-container>
+          <!-- <md-input-container>
             <label>Search Movie by Title</label>
-            <input ng-model="vm.title">
-          </md-input-container>
-
-
+            <input ng-model="vm.searchText2">
+          </md-input-container> -->
 
 
           <!-- Autocomplete -->
@@ -19,14 +17,13 @@
           md-input-maxlength="30"
           md-no-cache="vm.noCache"
           md-selected-item="vm.selectedItem"
-          md-search-text="vm.title"
-          md-items="item in vm.getMovieData(vm.title)"
+          md-search-text="vm.searchText"
+          md-items="item in vm.getMovieData(vm.searchText)"
           md-item-text="item.Title"
-          md-min-length="4"
-          md-dropdown-items="5"
+          md-min-length="5"
           md-floating-label="Search by Title">
           <md-item-template>
-            <span md-highlight-text="vm.title">{{item.Title}}</span>
+            <span md-highlight-text="vm.searchText">{{item.Title}}</span>
           </md-item-template>
           <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
             <div ng-message="md-require-match">Please select an existing state.</div>

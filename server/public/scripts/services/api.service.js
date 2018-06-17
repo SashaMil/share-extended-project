@@ -23,14 +23,24 @@ movieApp.service('apiService', function($http) {
 
   vm.omdbSearchRequest = function(searchInput) {
     console.log('in OMDB Search Request');
+    let formatSearchInput = searchInput.split(" ")
+    if (formatSearchInput.length > 1) {
+      formatSearchInput = formatSearchInput.join("+");
+    }
+    else {
+      formatSearchInput = formatSearchInput.join("");
+    }
+    console.log(formatSearchInput);
     return $http.get(`http://www.omdbapi.com/?apikey=2981f0cd&`, {
       params: {
-        s: searchInput,
+        s: formatSearchInput,
         type: 'movie'
       }
     })
     .then(function(response) {
+      console.log(response);
       vm.omdbSearchRequestResult = response;
+      return vm.omdbSearchRequestResult;
     })
     .catch(function(error) {
       console.log(`Error getting OMDB Search Result ${error}`);

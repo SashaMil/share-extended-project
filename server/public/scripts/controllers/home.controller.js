@@ -1,17 +1,27 @@
-movieApp.controller('homeController', function(apiService, dataBaseService, $q) {
+movieApp.controller('homeController', function(apiService, dataBaseService, $q, $timeout) {
   let vm = this;
   vm.currentNavItem = 'home';
 
-  vm.getMovieData = function(searchInput) {
-    apiService.omdbSearchRequest(searchInput)
-      .then(function() {
-        vm.movieInfo = apiService.omdbSearchRequestResult.data.Search;
-        // vm.youtubeSearch(searchInput);
+  // vm.timeGetMovieData = setTimeout(function(searchText) {
+  //   console.log('hello');
+  //   vm.getMovieData();
+  // },1000);
+
+  vm.getMovieData = function(searchText) {
+    let results = apiService.omdbSearchRequest(vm.searchText);
+    let deferred = $q.defer();
+      $timeout(function () {
+        deferred.resolve(results);
+      }, Math.random() * 1000, false);
+      return deferred.promise;
 
 
-        console.log(vm.movieInfo);
-      })
-      return vm.movieInfo;
+    // apiService.omdbSearchRequest(vm.searchText)
+    //   .then(function() {
+    //     console.log(vm.searchText);
+    //     vm.movieInfo = apiService.omdbSearchRequestResult.data.Search;
+    //     console.log(vm.movieInfo);
+    //   })
   }
 
   vm.youtubeSearch = function(searchInput) {
