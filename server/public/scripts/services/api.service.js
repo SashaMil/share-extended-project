@@ -41,6 +41,9 @@ movieApp.service('apiService', function($http) {
       console.log(response);
       vm.omdbSearchRequestResult = response.data.Search;
       console.log(vm.omdbSearchRequestResult);
+      if (vm.omdbSearchRequestResult === undefined) {
+        return [];
+      }
       return vm.omdbSearchRequestResult;
     })
     .catch(function(error) {

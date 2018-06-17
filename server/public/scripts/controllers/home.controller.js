@@ -15,9 +15,12 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
     let deferred = $q.defer();
     $timeout(function () {
       deferred.resolve(results);
-    },1000, false);
+    },200, false);
       console.log(deferred.promise);
-      return deferred.promise;
+      // if (deferred.promise.$$state.value === undefined) {
+      //   return [];
+      // }
+    return deferred.promise;
 
   }
 
