@@ -22,6 +22,7 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
         },200, false);
         vm.movieInfo = response.data;
         vm.youtubeSearch(vm.selectedItem.Title);
+        vm.saveFavoriteMovie(vm.movieInfo);
       })
   }
 
@@ -32,6 +33,12 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
       .then(function() {
         vm.video = apiService.youtubeSearchRequestResult.data.items;
       })
+  }
+
+  vm.saveFavoriteMovie = function(obj) {
+    dataBaseService.postMovieInfo(obj)
+    .then(function(response) {
+    })
   }
 
   // Renders youtube search result in DOM
