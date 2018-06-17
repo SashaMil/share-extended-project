@@ -4,13 +4,7 @@
   <md-content layout-padding md-theme="default">
     <form name="searchForm" ng-submit="$event.preventDefault()">
       <div layout-xs="row">
-          <!-- <md-input-container>
-            <label>Search Movie by Title</label>
-            <input ng-model="vm.searchText2">
-          </md-input-container> -->
 
-
-          <!-- Autocomplete -->
         <md-autocomplete
           md-input-name="autocompleteField"
           md-input-minlength="2"
@@ -18,40 +12,133 @@
           md-no-cache="vm.noCache"
           md-selected-item="vm.selectedItem"
           md-search-text="vm.searchText"
-          md-items="item in vm.getMovieData(vm.searchText)"
+          md-selected-item-change="vm.getMovieDataByTitle(vm.selectedItem.Title)"
+          md-items="item in vm.getMovieDataBySearch(vm.searchText)"
           md-item-text="item.Title"
           md-min-length="3"
           md-floating-label="Search by Title">
           <md-item-template>
-            <span ng-click="vm.test()" md-highlight-text="vm.searchText">{{item.Title}}</span>
+            <span md-highlight-text="vm.searchText">{{item.Title}}</span>
           </md-item-template>
-          <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
-            <div ng-message="md-require-match">Please select an existing state.</div>
-            <div ng-message="minlength">Your entry is not long enough.</div>
-            <div ng-message="maxlength">Your entry is too long.</div>
-          </div>
         </md-autocomplete>
 
-        <md-list>
-          <label>Year of Release</label>
-          <p>{{vm.selectedItem}}</p>
-          <br>
-          <label>Poster</label>
-          <img src="{{vm.selectedItem.Poster}}" alt="">
-      <!-- <md-button class="md-primary" ng-click="vm.getMovieData(vm.title)">Search</button> -->
-        </md-list>
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <img src={{vm.movieInfo.Poster}} alt="">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.movieInfo">
+          <label>Plot</label>
+          <input type="text" ng-model="vm.movieInfo.Plot">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Director</label>
+          <input ng-model="vm.movieInfo.Director" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.movieInfo">
+          <label>Writer(s)</label>
+          <input type="text" ng-model="vm.movieInfo.Writer">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.movieInfo">
+          <label>Stars</label>
+          <input type="text" ng-model="vm.movieInfo.Actors">
+        </md-input-container>
 
 
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>IMDB Rating</label>
+          <input ng-model="vm.movieInfo.imdbRating" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Website</label>
+          <input ng-model="vm.movieInfo.Website" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Type</label>
+          <input ng-model="vm.movieInfo.Type" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Runtime</label>
+          <input ng-model="vm.movieInfo.Runtime" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Rating</label>
+          <input ng-model="vm.movieInfo.Rated" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Production</label>
+          <input ng-model="vm.movieInfo.Production" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Country</label>
+          <input ng-model="vm.movieInfo.Country" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Box Office</label>
+          <input ng-model="vm.movieInfo.BoxOffice" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Internet Movie Database</label>
+          <input ng-model="vm.movieInfo.Ratings[0].Value" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Rotten Tomatoes</label>
+          <input ng-model="vm.movieInfo.Ratings[1].Value" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>MetaCritic</label>
+          <input ng-model="vm.movieInfo.Ratings[2].Value" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>IMDB Votes</label>
+          <input ng-model="vm.movieInfo.imdbVotes" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.selectedItem">
+          <label>Metascore</label>
+          <input ng-model="vm.movieInfo.Metascore" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.movieInfo">
+          <label>Writer(s)</label>
+          <input type="text" ng-model="vm.movieInfo.Writer">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.movieInfo">
+          <label>Awards</label>
+          <input type="text" ng-model="vm.movieInfo.Awards">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.movieInfo">
+          <label>Release Date</label>
+          <input type="text" ng-model="vm.movieInfo.Released">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.movieInfo">
+          <label>Genre</label>
+          <input type="text" ng-model="vm.movieInfo.Genre">
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-show="vm.movieInfo">
+          <label>Release Date</label>
+          <input type="text" ng-model="vm.movieInfo.Plot">
+        </md-input-container>
 
       </div>
     </form>
-
-    <!-- Submit Input Button -->
-        <md-input-container>
-
-      <!-- <md-button class="md-primary" ng-click="vm.getMovieData(vm.title)">Search</button> -->
-        </md-input-container>
-
   </md-content>
 
   <!-- Video Player HTML -->
