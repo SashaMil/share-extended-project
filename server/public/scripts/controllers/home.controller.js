@@ -44,9 +44,6 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
     })
   }
 
-  // Renders youtube search result in DOM
-  vm.playVideo = function(id) {
-    return 'https://www.youtube.com/embed/' + id;
-  }
+
 
 })

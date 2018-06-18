@@ -59,6 +59,7 @@ movieApp.service('apiService', function($http) {
       }
     })
     .then(function(response) {
+      console.log(response);
       vm.youtubeSearchRequestResult = response;
     })
     .catch(function(error) {

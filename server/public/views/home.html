@@ -139,18 +139,4 @@
     </form>
   </md-content>
 
-  <!-- Video Player HTML -->
-  <div class="video-player" ng-show="vm.video">
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item"
-        ng-src={{vm.playVideo(vm.video[0].id.videoId)}}
-        allowFullScreen>
-      </iframe>
-    </div>
-    <div class="video-player-details">
-      <h3>{{ vm.video.snippet.title }}</h3>
-      <div>{{ vm.video.snippet.description}}</div>
-    </div>
-  </div>
-
 </div>

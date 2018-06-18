@@ -2,8 +2,8 @@
     <md-dialog-content>
 
 
-          <md-input-container class="md-block">
-            <div ng-model="vm.movieInfo.poster">
+          <md-input-container class="md-default-theme" layout="row">
+            <div ng-model="vm.movieInfo.poster" flex>
               <img src={{vm.movieInfo.poster}} alt="">
             </div>
           </md-input-container>
@@ -120,10 +120,28 @@
           </md-input-container>
 
           <md-card-actions>
-            <md-button class="md-primary md-raised">Favorite</md-button>
+            <md-button ng-click="vm.playTrailer(vm.movieInfo.title)" class="md-primary md-raised">Play Trailer</md-button>
             <md-button ng-click="vm.editMovie(vm.movieInfo)" class="md-primary md-raised">Submit Changes</md-button>
-            <md-button ng-click="vm.removeMovie(vm.movieInfo.id)" class="md-primary md-raised">Delete</md-button>
+            <md-button ng-click="vm.removeMovie(vm.movieInfo.id, vm.movie)" class="md-primary md-raised">Delete</md-button>
           </md-card-actions>
 
     </md-dialog-conent>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Video Player HTML -->
+    <div class="video-player" ng-show="vm.video">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="500" height="400" class="embed-responsive-item"
+          ng-src={{vm.playVideo(vm.video[0].id.videoId)}}
+          allowFullScreen>
+        </iframe>
+      </div>
+      <div class="video-player-details">
+        <h3>{{ vm.video.snippet.title }}</h3>
+        <div>{{ vm.video.snippet.description}}</div>
+      </div>
+    </div>
 </div>
