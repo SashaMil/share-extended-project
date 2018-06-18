@@ -1,13 +1,25 @@
-<div ng-controller="displayMoviesController as vm">
+<div ng-controller="displayMovieController as vm" layout="column" ng-cloak class="md-inline-form">
+  <md-content class="md-padding" md-theme="default" layout="row">
+    <div flex layout="row">
+      <md-card ng-repeat="movie in vm.movieList" class="movie">
 
+        <md-card-title>
+          <md-card-title-text>
+          </md-card-title-text>
+        </md-card-title>
 
+        <md-card-content>
+          <img src={{movie.poster}}>
+        </md-card-content>
 
+        <md-card-actions>
+          <md-button class="md-primary md-raised">Favorite</md-button>
+          <md-button class="md-primary md-raised">Edit Contents</md-button>
+          <md-button class="md-primary md-raised">Delete</md-button>
+        </md-card-actions>
 
+      </md-card>
 
-
-
-
-
-
-
+    </div>
+  </md-content>
 </div>

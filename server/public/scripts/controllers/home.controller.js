@@ -22,7 +22,6 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
         },200, false);
         vm.movieInfo = response.data;
         vm.youtubeSearch(vm.selectedItem.Title);
-        vm.saveFavoriteMovie(vm.movieInfo);
       })
   }
 

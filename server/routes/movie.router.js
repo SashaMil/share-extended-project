@@ -21,22 +21,33 @@ router.post('/', (req, res) => {
     })
 });
 
-// router.get('/:type', (req, res) => {
-//   console.log('gorrilla');
-//   console.log('Handling get request in /listing router');
-//   const type = req.params.type;
-//   console.log(req);
-//   console.log(req.params.type);
-//   const queryText = 'SELECT * FROM listings WHERE type = $1;';
-//   pool.query(queryText, [type])
-//     .then((result) => {
-//       res.send(result.rows);
-//     })
-//     .catch((error) => {
-//       console.log('Error getting all type listings', err)
-//       res.sendStatus(500);
-//     })
-// });
+router.get('/', (req, res) => {
+
+  const possibleQuery = req.query.q;
+  let queryText2 = 'SELECT * FROM movie WHERE title=$1;';
+    // pool.query(queryText2, [possibleQuery])
+  let queryText = 'SELECT * FROM movie;';
+    // pool.query(queryText);
+
+  let func1 = function() {
+    if (possibleQuery) {
+      return pool.query(queryText2, [possibleQuery]);
+    } else {
+      return pool.query(queryText);
+    }
+  }
+  func1()
+  .then((result) => {
+    console.log(result.rows);
+    res.send(result.rows);
+  })
+  .catch((error) => {
+    console.log('Error getting all treats', error);
+    res.sendStatus(500);
+  })
+
+})
+
 //
 // router.delete('/:id', (req, res) => {
 //   console.log('Handling delete request in /listing router');

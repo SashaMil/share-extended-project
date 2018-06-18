@@ -16,4 +16,17 @@ movieApp.service('dataBaseService', function($http) {
     })
   }
 
+  vm.getMovieInfo = function() {
+    return $http({
+      method: 'GET',
+      url: '/movie',
+    })
+    .then(function(response) {
+      return response;
+    })
+    .catch(function(error) {
+      console.log(`Error getting movieList from db ${error}`);
+    })
+  }
+
 })
