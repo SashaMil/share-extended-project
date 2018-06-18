@@ -1,4 +1,4 @@
-const movieApp = angular.module('movieApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
+const movieApp = angular.module('movieApp', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngAnimate']);
 
 movieApp.config(function($routeProvider, $sceDelegateProvider, $mdThemingProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([

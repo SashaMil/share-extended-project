@@ -1,6 +1,10 @@
 movieApp.service('dataBaseService', function($http) {
   let vm = this;
 
+  vm.storeInService = function(title) {
+    vm.sharedData = title;
+  }
+
   vm.postMovieInfo = function(obj) {
     console.log(obj);
     return $http({

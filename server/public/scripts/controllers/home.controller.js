@@ -34,7 +34,7 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
       })
   }
 
-  vm.saveFavoriteMovie = function(obj) {
+  vm.addMovie = function(obj) {
     dataBaseService.postMovieInfo(obj)
     .then(function(response) {
     })

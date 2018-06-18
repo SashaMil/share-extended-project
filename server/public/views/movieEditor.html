@@ -1,0 +1,121 @@
+<div ng-controller="movieEditorController as vm" layout="column" ng-cloak>
+  <md-content class="md-padding" md-theme="default">
+    <form>
+      <div layout-xs="row">
+        <md-input-container class="md-block">
+          <img src={{vm.movieInfo.poster}} alt="">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Plot</label>
+          <input type="text" ng-model="vm.movieInfo.plot">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Director</label>
+          <input ng-model="vm.movieInfo.director" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Writer(s)</label>
+          <input type="text" ng-model="vm.movieInfo.writer">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Stars</label>
+          <input type="text" ng-model="vm.movieInfo.actors">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>IMDB Rating</label>
+          <input ng-model="vm.movieInfo.imdbRating" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Website</label>
+          <input ng-model="vm.movieInfo.website" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Type</label>
+          <input ng-model="vm.movieInfo.type" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Runtime</label>
+          <input ng-model="vm.movieInfo.runtime" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Rating</label>
+          <input ng-model="vm.movieInfo.rated" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Production</label>
+          <input ng-model="vm.movieInfo.production" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Country</label>
+          <input ng-model="vm.movieInfo.country" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Box Office</label>
+          <input ng-model="vm.movieInfo.boxoffice" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Internet Movie Database</label>
+          <input ng-model="vm.movieInfo.ratings[0].value" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Rotten Tomatoes</label>
+          <input ng-model="vm.movieInfo.ratings[1].value" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>MetaCritic</label>
+          <input ng-model="vm.movieInfo.ratings[2].value" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>IMDB Votes</label>
+          <input ng-model="vm.movieInfo.imdbVotes" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Metascore</label>
+          <input ng-model="vm.movieInfo.metascore" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Writer(s)</label>
+          <input type="text" ng-model="vm.movieInfo.writer">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Awards</label>
+          <input type="text" ng-model="vm.movieInfo.awards">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Release Date</label>
+          <input type="text" ng-model="vm.movieInfo.released">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Genre</label>
+          <input type="text" ng-model="vm.movieInfo.genre">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Release Date</label>
+          <input type="text" ng-model="vm.movieInfo.plot">
+        </md-input-container>
+      </div>
+    </form>
+  </md-content>
+</div>
