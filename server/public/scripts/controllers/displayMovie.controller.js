@@ -17,8 +17,7 @@ movieApp.controller('displayMovieController', function(dataBaseService, $mdDialo
      templateUrl: 'views/movieEditor.html',
      parent: angular.element(document.body),
      targetEvent: ev,
-     clickOutsideToClose:true,
-     fullscreen: vm.customFullscreen // Only for -xs, -sm breakpoints.
+     clickOutsideToClose:true
    })
    .then(function(answer) {
      vm.status = 'You said the information was "' + answer + '".';

@@ -3,20 +3,19 @@ movieApp.controller('movieEditorController', function(dataBaseService, $mdDialog
 
   vm.getMovieData = function() {
     vm.movieInfo = dataBaseService.sharedData
-    console.log(vm.movieInfo);
   }
 
-  vm.handleDialog = function() {
-    vm.hide = function() {
-      $mdDialog.hide();
-    };
-    vm.cancel = function() {
-      $mdDialog.cancel();
-    };
-    vm.answer = function(answer) {
-      $mdDialog.hide(answer);
-    };
-  }
+  // vm.handleDialog = function() {
+  //   vm.hide = function() {
+  //     $mdDialog.hide();
+  //   };
+  //   vm.cancel = function() {
+  //     $mdDialog.cancel();
+  //   };
+  //   vm.answer = function(answer) {
+  //     $mdDialog.hide(answer);
+  //   };
+  // }
 
   vm.getMovieData();
 });

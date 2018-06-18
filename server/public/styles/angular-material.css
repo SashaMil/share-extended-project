@@ -1609,6 +1609,10 @@ md-datepicker {
   .md-datepicker-input::-ms-clear {
     display: none; }
 
+/* .style {
+  margin: auto;
+  max-width: 100%;
+} */
 ._md-datepicker-floating-label > md-datepicker {
   overflow: visible; }
   ._md-datepicker-floating-label > md-datepicker .md-datepicker-input-container {
@@ -1768,31 +1772,72 @@ md-datepicker[disabled] .md-datepicker-triangle-button {
           transform: translateY(0); }
 
 .md-dialog-is-showing {
-  max-height: 100%; }
+  max-height: 100%;
+ }
 
-  
+ .noscroll {
+  overflow: hidden;
+}
+
+.style1 {
+  visibility: hidden;
+}
+
+.style2 {
+  margin:auto;
+  max-width: 100%;
+}
+
+.dialogdemoBasicUsage #popupContainer {
+  position: relative; }
+
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px; }
+
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px; }
+
+.dialogdemoBasicUsage button {
+  width: 200px; }
+
+.dialogdemoBasicUsage div#status {
+  color: #c60008; }
+
+.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+  margin-bottom: 0; }
+
+
+
+/* .imgStyle {
+  margin: auto;
+  max-width: 100%;
+} */
 
 .md-dialog-container {
-  /* display: -webkit-box; */
-  /* display: -webkit-flex; */
-  display: flex;
+  display: -webkit-box; */
+  display: -webkit-flex;
+  /* display: flex; */
   -webkit-box-pack: center;
-  /* -webkit-justify-content: center; */
+  -webkit-justify-content: center;
           justify-content: center;
   -webkit-box-align: center;
-  /* -webkit-align-items: center; */
+  -webkit-align-items: center;
           align-items: center;
   position: absolute;
-  /* top: 0; */
+  top: 0;
   left: 0;
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   z-index: 80;
-  overflow: hidden; }
+  overflow: auto; }
 
 md-dialog {
   opacity: 0;
-  min-width: 240px;
+  min-width: 800px;
+  min-height: 800px;
   max-width: 100%;
   max-height: 100%;
   position: relative;
@@ -1848,7 +1893,7 @@ md-dialog {
       width: 100%; }
     md-dialog md-dialog-content .md-prompt-input-container {
       width: 100%;
-      box-sizing: border-box; }
+      box-sizing: unset; }
   md-dialog .md-actions, md-dialog md-dialog-actions {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1888,6 +1933,23 @@ md-dialog {
 @media screen and (-ms-high-contrast: active) {
   md-dialog {
     border: 1px solid #fff; } }
+
+    $mdDialog - fullscreen dialog styling
+@media screen and (max-width: 1000px){
+
+       .fullscreen-dialog {
+       height:100%;
+       width:100%;
+       max-height:100%;
+       max-width: 100%;
+       position: relative;
+       top: 0;
+       left: 0;
+       border-radius: 0;
+   }
+}
+
+
 
 @media (max-width: 959px) {
   md-dialog.md-dialog-fullscreen {

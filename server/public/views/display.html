@@ -1,22 +1,14 @@
 <div ng-controller="displayMovieController as vm" layout="column" ng-cloak class="md-inline-form" id="popupContainer">
   <md-content class="md-padding parent" md-theme="default" layout="row" layout-align="space-between center" layout-fill>
-    <div class="dialog-demo-content" flex layout="row" layout-align="center">
+    <div flex layout="row" layout-align="center">
       <md-card ng-repeat="movie in vm.movieList" class="movie">
 
-        <!-- <md-card-title>
-          <md-card-title-text>
-          </md-card-title-text>
-        </md-card-title> -->
 
         <md-card-content class="parent layout-fill layout-row" layout="row" layout-fill>
           <img ng-click="vm.showAdvanced($event, movie)" vm.class="child child-1" flex src={{movie.poster}} value={{movie.title}}>
         </md-card-content>
 
-        <!-- <md-card-actions>
-          <md-button class="md-primary md-raised">Favorite</md-button>
-          <md-button class="md-primary md-raised">Edit Contents</md-button>
-          <md-button class="md-primary md-raised">Delete</md-button>
-        </md-card-actions> -->
+
 
       </md-card>
 
@@ -24,13 +16,13 @@
 
     </div>
 
-    <div ng-if="status" id="status">
+    <!-- <div ng-if="status" id="status">
       <b layout="row" layout-align="center center" class="md-padding">
         {{status}}
       </b>
-    </div>
+    </div> -->
 
-    <div style="visibility: hidden">
+    <!-- <div class="md-style1">
       <div class="md-dialog-container" id="myDialog">
         <md-dialog layout-padding>
           <h2>Pre-Rendered Dialog</h2>
@@ -44,7 +36,7 @@
           </p>
         </md-dialog>
       </div>
-    </div>
+    </div> -->
 
 
   </md-content>

@@ -1,11 +1,13 @@
-.movieInput-container {
+/* .movieInput-container {
   display: flex;
   flex-direction: column;
 }
 
 .movieInput-container > * {
   width: 100%;
-}
+} */
+
+
 
 /* .dialogdemoBasicUsage #popupContainer {
   position: relative; }
