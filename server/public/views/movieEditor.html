@@ -2,9 +2,9 @@
     <md-dialog-content>
 
 
-          <md-input-container class="md-default-theme" layout="row">
-            <div ng-model="vm.movieInfo.poster" flex>
-              <img src={{vm.movieInfo.poster}} alt="">
+          <md-input-container class="flexbox-parent">
+            <div ng-model="vm.movieInfo.poster" layout="row" layout-align="center center" min-height="500">
+              <img src={{vm.movieInfo.poster}} alt="" width="400">
             </div>
           </md-input-container>
 
