@@ -1813,6 +1813,9 @@ md-datepicker[disabled] .md-datepicker-triangle-button {
 
 /* .imgStyle {
   margin: auto;
+
+
+
   max-width: 100%;
 } */
 
@@ -1832,7 +1835,7 @@ md-datepicker[disabled] .md-datepicker-triangle-button {
   width: 100%;
   height: 100%;
   z-index: 80;
-  overflow: auto; }
+  overflow: visible; }
 
 md-dialog {
   opacity: 0;
@@ -1841,7 +1844,7 @@ md-dialog {
   max-width: 100%;
   max-height: 100%;
   position: relative;
-  overflow: auto;
+  overflow: visible;
   box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);
   display: -webkit-box;
   display: -webkit-flex;
@@ -1870,7 +1873,7 @@ md-dialog {
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
             flex-direction: column;
-    overflow: auto; }
+    overflow: visible; }
   md-dialog .md-dialog-content {
     padding: 24px; }
   md-dialog md-dialog-content {
@@ -1912,7 +1915,7 @@ md-dialog {
     padding-right: 8px;
     padding-left: 16px;
     min-height: 52px;
-    overflow: hidden; }
+    overflow: visible; }
     [dir=rtl] md-dialog .md-actions, [dir=rtl] md-dialog md-dialog-actions {
       padding-right: 16px; }
     [dir=rtl] md-dialog .md-actions, [dir=rtl] md-dialog md-dialog-actions {
@@ -2162,7 +2165,7 @@ md-fab-toolbar {
   md-fab-toolbar .md-fab-toolbar-wrapper {
     display: block;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     height: 68px; }
   md-fab-toolbar md-fab-trigger {
     position: absolute;
@@ -2286,7 +2289,7 @@ md-grid-list {
       height: 48px;
       color: #fff;
       background: rgba(0, 0, 0, 0.18);
-      overflow: hidden;
+      overflow: visible;
       position: absolute;
       left: 0;
       right: 0; }
@@ -2386,7 +2389,7 @@ md-input-container {
     min-height: 26px; }
   md-input-container textarea {
     resize: none;
-    overflow: hidden; }
+    overflow: visible; }
     md-input-container textarea.md-input {
       min-height: 26px;
       -ms-flex-preferred-size: auto; }
@@ -2408,7 +2411,7 @@ md-input-container {
       vertical-align: top; }
   md-input-container label:not(.md-no-float):not(.md-container-ignore),
   md-input-container .md-placeholder {
-    overflow: hidden;
+    overflow: visible;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
@@ -2515,14 +2518,14 @@ md-input-container {
     -webkit-box-ordinal-group: 5;
     -webkit-order: 4;
             order: 4;
-    overflow: hidden;
+    overflow: visible;
     clear: left; }
     [dir=rtl] md-input-container .md-input-messages-animation {
       clear: right; }
   md-input-container .md-input-message-animation, md-input-container .md-char-counter {
     font-size: 12px;
     line-height: 14px;
-    overflow: hidden;
+    overflow: visible;
     -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
     transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
     opacity: 1;
@@ -2974,7 +2977,7 @@ md-list-item {
               flex: 1 1 auto;
       margin: auto;
       text-overflow: ellipsis;
-      overflow: hidden; }
+      overflow: visible; }
       md-list-item.md-2-line .md-list-item-text.md-offset, md-list-item.md-2-line > .md-no-style .md-list-item-text.md-offset, md-list-item.md-3-line .md-list-item-text.md-offset, md-list-item.md-3-line > .md-no-style .md-list-item-text.md-offset {
         margin-left: 56px; }
         [dir=rtl] md-list-item.md-2-line .md-list-item-text.md-offset, [dir=rtl] md-list-item.md-2-line > .md-no-style .md-list-item-text.md-offset, [dir=rtl] md-list-item.md-3-line .md-list-item-text.md-offset, [dir=rtl] md-list-item.md-3-line > .md-no-style .md-list-item-text.md-offset {
@@ -2986,7 +2989,7 @@ md-list-item {
         letter-spacing: 0.010em;
         margin: 0 0 0px 0;
         line-height: 1.2em;
-        overflow: hidden;
+        overflow: visible;
         white-space: nowrap;
         text-overflow: ellipsis; }
       md-list-item.md-2-line .md-list-item-text h4, md-list-item.md-2-line > .md-no-style .md-list-item-text h4, md-list-item.md-3-line .md-list-item-text h4, md-list-item.md-3-line > .md-no-style .md-list-item-text h4 {
@@ -2995,7 +2998,7 @@ md-list-item {
         margin: 3px 0 1px 0;
         font-weight: 400;
         line-height: 1.2em;
-        overflow: hidden;
+        overflow: visible;
         white-space: nowrap;
         text-overflow: ellipsis; }
       md-list-item.md-2-line .md-list-item-text p, md-list-item.md-2-line > .md-no-style .md-list-item-text p, md-list-item.md-3-line .md-list-item-text p, md-list-item.md-3-line > .md-no-style .md-list-item-text p {
@@ -3374,7 +3377,7 @@ md-progress-linear {
   md-progress-linear .md-container {
     display: block;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     width: 100%;
     height: 5px;
     -webkit-transform: translate(0, 0) scale(1, 1);

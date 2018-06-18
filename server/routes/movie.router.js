@@ -5,12 +5,11 @@ const pool = require('../modules/pool');
 
 router.post('/', (req, res) => {
   console.log('Handling POST for /movie', req.body);
-  const queryText = `INSERT INTO movie (actors, awards, boxoffice, country, dvd, director, genre, metascore, plot, poster, production, rated, ratings, released, runtime, title, type, website, writer, year, imdbRating, imdbVotes)
+  const queryText = `INSERT INTO movie (actors, awards, boxoffice, country, dvd, director, genre, imdbRating, imdbVotes, internetmoviedatabase, metacritic, metascore, plot, poster, production, rated, released, rottentomatoes, runtime, title, type, website, writer)
                       Values
-                      ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22);`;
-  pool.query(queryText, [req.body.Actors, req.body.Awards, req.body.BoxOffice, req.body.Country, req.body.DVD, req.body.Director, req.body.Genre,
- req.body.Metascore, req.body.Plot, req.body.Poster, req.body.Production, req.body.Rated, req.body.Ratings, req.body.Released, req.body.Runtime, req.body.Title, req.body.Type, req.body.Website, req.body.Writer,
-  req.body.Year, req.body.imdbRating, req.body.imdbVotes])
+                      ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23);`;
+  pool.query(queryText, [req.body.actors, req.body.awards, req.body.boxoffice, req.body.country, req.body.dvd, req.body.director, req.body.genre, req.body.imdbrating, req.body.imdbvotes, req.body.internetmoviedatabase, req.body.metacritic,
+ req.body.metascore, req.body.plot, req.body.poster, req.body.production, req.body.rated, req.body.released, req.body.rottentomatoes, req.body.runtime, req.body.title, req.body.type, req.body.website, req.body.writer])
     .then((result) => {
       console.log('Finished POST for /movie');
       res.sendStatus(200);
@@ -20,6 +19,26 @@ router.post('/', (req, res) => {
       res.sendStatus(500);
     })
 });
+
+router.put('/', (req, res) => {
+  let arrayOfParams = [];
+  for (let prop in req.query) {
+    arrayOfParams.push(req.query[prop]);
+  }
+  arrayOfParams.shift();
+  const queryText = `UPDATE movie SET actors=$2, awards=$3, boxoffice=$4, country=$5, dvd=$6, director=$7, genre=$8, imdbrating=$9, imdbvotes=$10, internetmoviedatabase=$11, metacritic=$12, metascore=$13, plot=$14, poster=$15, production=$16, rated=$17, released=$18, rottentomatoes=$19, runtime=$20, title=$21, type=$22, website=$23, writer=$24 WHERE id=$1;`;
+  pool.query(queryText, [req.query.id, req.query.actors, req.query.awards, req.query.boxoffice, req.query.country, req.query.dvd, req.query.director, req.query.genre, req.query.imdbrating, req.query.imdbvotes, req.query.internetmoviedatabase, req.query.metacritic, req.query.metascore, req.query.plost, req.query.poster, req.query.production, req.query.rated, req.query.release, req.query.rottentomatoes, req.query.runtime, req.query.title, req.query.type, req.query.website, req.query.writer])
+  .then((result) => {
+    console.log('Finished PUT for /movie');
+    res.sendStatus(200);
+  })
+  .catch((error) => {
+    console.log(`Error handling POST for /movie`, error);
+    res.sendStatus(500);
+  })
+});
+
+
 
 router.get('/', (req, res) => {
 
@@ -48,21 +67,21 @@ router.get('/', (req, res) => {
 
 })
 
-//
-// router.delete('/:id', (req, res) => {
-//   console.log('Handling delete request in /listing router');
-//   const id = req.params.id;
-//   console.log(req.params.id);
-//   const queryText = `DELETE FROM listings WHERE id=$1`;
-//   pool.query(queryText, [id])
-//   .then((result) => {
-//     console.log('Deleted from /listings')
-//     res.sendStatus(200);
-//   })
-//   .catch((error) => {
-//     console.log('Error handling DELETE for /listing', error);
-//     res.sendStatus(500);
-//   })
-// });
+
+router.delete('/:id', (req, res) => {
+  console.log('Handling delete request in /movie router');
+  const id = req.params.id;
+  console.log(req.params.id);
+  const queryText = `DELETE FROM movie WHERE id=$1`;
+  pool.query(queryText, [id])
+  .then((result) => {
+    console.log('Deleted from /movie')
+    res.sendStatus(200);
+  })
+  .catch((error) => {
+    console.log('Error handling DELETE for /movie', error);
+    res.sendStatus(500);
+  })
+});
 
 module.exports = router;

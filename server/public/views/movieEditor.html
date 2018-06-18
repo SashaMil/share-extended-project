@@ -1,11 +1,18 @@
-<div ng-controller="movieEditorController as vm" layout="column" ng-cloak class="md-inline-form">
-  <md-dialog>
+<div ng-controller="movieEditorController as vm" layout="column" ng-cloak>
     <md-dialog-content>
-      <div>
+
 
           <md-input-container class="md-block">
-            <img src={{vm.movieInfo.poster}} alt="">
+            <div ng-model="vm.movieInfo.poster">
+              <img src={{vm.movieInfo.poster}} alt="">
+            </div>
           </md-input-container>
+
+          <md-input-container class="md-block">
+            <label>Title</label>
+            <input type="text" ng-model="vm.movieInfo.title">
+          </md-input-container>
+
 
           <md-input-container class="md-block">
             <label>Plot</label>
@@ -29,7 +36,7 @@
 
           <md-input-container class="md-block">
             <label>IMDB Rating</label>
-            <input ng-model="vm.movieInfo.imdbRating" type="text">
+            <input ng-model="vm.movieInfo.imdbrating" type="text">
           </md-input-container>
 
           <md-input-container class="md-block">
@@ -69,32 +76,27 @@
 
           <md-input-container class="md-block">
             <label>Internet Movie Database</label>
-            <input ng-model="vm.movieInfo.ratings[0].value" type="text">
+            <input ng-model="vm.movieInfo.internetmoviedatabase" type="text">
           </md-input-container>
 
           <md-input-container class="md-block">
             <label>Rotten Tomatoes</label>
-            <input ng-model="vm.movieInfo.ratings[1].value" type="text">
+            <input ng-model="vm.movieInfo.rottentomatoes" type="text">
           </md-input-container>
 
           <md-input-container class="md-block">
             <label>MetaCritic</label>
-            <input ng-model="vm.movieInfo.ratings[2].value" type="text">
+            <input ng-model="vm.movieInfo.metacritic" type="text">
           </md-input-container>
 
           <md-input-container class="md-block">
             <label>IMDB Votes</label>
-            <input ng-model="vm.movieInfo.imdbVotes" type="text">
+            <input ng-model="vm.movieInfo.imdbvotes" type="text">
           </md-input-container>
 
           <md-input-container class="md-block">
             <label>Metascore</label>
             <input ng-model="vm.movieInfo.metascore" type="text">
-          </md-input-container>
-
-          <md-input-container class="md-block">
-            <label>Writer(s)</label>
-            <input type="text" ng-model="vm.movieInfo.writer">
           </md-input-container>
 
           <md-input-container class="md-block">
@@ -113,16 +115,15 @@
           </md-input-container>
 
           <md-input-container class="md-block">
-            <label>Release Date</label>
-            <input type="text" ng-model="vm.movieInfo.plot">
+            <label>DVD</label>
+            <input type="text" ng-model="vm.movieInfo.dvd">
           </md-input-container>
+
           <md-card-actions>
             <md-button class="md-primary md-raised">Favorite</md-button>
-            <md-button class="md-primary md-raised">Edit Contents</md-button>
-            <md-button class="md-primary md-raised">Delete</md-button>
+            <md-button ng-click="vm.editMovie(vm.movieInfo)" class="md-primary md-raised">Submit Changes</md-button>
+            <md-button ng-click="vm.removeMovie(vm.movieInfo.id)" class="md-primary md-raised">Delete</md-button>
           </md-card-actions>
 
-      </div>
     </md-dialog-conent>
-  </md-dialog>
 </div>

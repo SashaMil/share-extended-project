@@ -37,6 +37,10 @@ movieApp.controller('homeController', function(apiService, dataBaseService, $q, 
   vm.addMovie = function(obj) {
     dataBaseService.postMovieInfo(obj)
     .then(function(response) {
+      alert('Successfully added movie!')
+      vm.movieInfo = {};
+      vm.selectedItem = null;
+      vm.searchText = "";
     })
   }
 

@@ -71,7 +71,7 @@
         </md-input-container>
 
         <md-input-container class="md-block" ng-show="vm.selectedItem">
-          <label>Rating</label>
+          <label>Rated</label>
           <input ng-model="vm.movieInfo.Rated" type="text">
         </md-input-container>
 
@@ -116,11 +116,6 @@
         </md-input-container>
 
         <md-input-container class="md-block" ng-show="vm.movieInfo">
-          <label>Writer(s)</label>
-          <input type="text" ng-model="vm.movieInfo.Writer">
-        </md-input-container>
-
-        <md-input-container class="md-block" ng-show="vm.movieInfo">
           <label>Awards</label>
           <input type="text" ng-model="vm.movieInfo.Awards">
         </md-input-container>
@@ -136,8 +131,8 @@
         </md-input-container>
 
         <md-input-container class="md-block" ng-show="vm.movieInfo">
-          <label>Release Date</label>
-          <input type="text" ng-model="vm.movieInfo.Plot">
+          <label>DVD Release</label>
+          <input type="text" ng-model="vm.movieInfo.DVD">
         </md-input-container>
 
       </div>
