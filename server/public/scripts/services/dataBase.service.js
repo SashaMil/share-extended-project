@@ -48,10 +48,9 @@ movieApp.service('dataBaseService', function($http) {
   vm.getMovieInfo = function() {
     return $http({
       method: 'GET',
-      url: '/movie',
+      url: '/movie'
     })
     .then(function(response) {
-      console.log(response);
       return response;
     })
     .catch(function(error) {
@@ -60,16 +59,17 @@ movieApp.service('dataBaseService', function($http) {
   }
 
   vm.putMovie = function(obj) {
+    console.log(obj);
     return $http({
       method: 'PUT',
       url: '/movie',
       params: obj
     })
-    .then(function(respone) {
-      console.log('edited movie', repsonse);
+    .then(function(response) {
+      console.log('edited movie', response);
     })
     .catch(function(error) {
-      console.log(`Error editing movie`);
+      console.log(`Error editing movie`, error);
     })
   }
 

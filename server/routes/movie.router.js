@@ -21,13 +21,9 @@ router.post('/', (req, res) => {
 });
 
 router.put('/', (req, res) => {
-  let arrayOfParams = [];
-  for (let prop in req.query) {
-    arrayOfParams.push(req.query[prop]);
-  }
-  arrayOfParams.shift();
+  console.log(req.query);
   const queryText = `UPDATE movie SET actors=$2, awards=$3, boxoffice=$4, country=$5, dvd=$6, director=$7, genre=$8, imdbrating=$9, imdbvotes=$10, internetmoviedatabase=$11, metacritic=$12, metascore=$13, plot=$14, poster=$15, production=$16, rated=$17, released=$18, rottentomatoes=$19, runtime=$20, title=$21, type=$22, website=$23, writer=$24 WHERE id=$1;`;
-  pool.query(queryText, [req.query.id, req.query.actors, req.query.awards, req.query.boxoffice, req.query.country, req.query.dvd, req.query.director, req.query.genre, req.query.imdbrating, req.query.imdbvotes, req.query.internetmoviedatabase, req.query.metacritic, req.query.metascore, req.query.plost, req.query.poster, req.query.production, req.query.rated, req.query.release, req.query.rottentomatoes, req.query.runtime, req.query.title, req.query.type, req.query.website, req.query.writer])
+  pool.query(queryText, [req.query.id, req.query.actors, req.query.awards, req.query.boxoffice, req.query.country, req.query.dvd, req.query.director, req.query.genre, req.query.imdbrating, req.query.imdbvotes, req.query.internetmoviedatabase, req.query.metacritic, req.query.metascore, req.query.plot, req.query.poster, req.query.production, req.query.rated, req.query.released, req.query.rottentomatoes, req.query.runtime, req.query.title, req.query.type, req.query.website, req.query.writer])
   .then((result) => {
     console.log('Finished PUT for /movie');
     res.sendStatus(200);

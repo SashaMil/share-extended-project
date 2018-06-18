@@ -23,12 +23,10 @@ movieApp.controller('movieEditorController', function(dataBaseService, apiServic
   }
 
   vm.editMovie = function(obj) {
-    console.log(obj);
     dataBaseService.putMovie(obj)
     .then(function() {
-      vm.changeView = function(view) {
-        $location.path('localhost:5000/#!/display');
-      }
+      vm.getMovieData();
+      vm.refreshPage();
     })
   }
 
