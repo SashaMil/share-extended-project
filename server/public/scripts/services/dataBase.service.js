@@ -16,20 +16,35 @@ movieApp.service('dataBaseService', function($http) {
       genre: obj.Genre,
       imdbrating: obj.imdbRating,
       imdbvotes: obj.imdbVotes,
-      internetmoviedatabase: obj.Ratings[0].Value,
-      metacritic: obj.Ratings[2].Value ? obj.Ratings[2].Value : undefined,
+      // internetmoviedatabase: obj.Ratings[0].Value,
+      // metacritic: obj.Ratings[2].Value,
       metascore: obj.Metascore,
       plot: obj.Plot,
       poster: obj.Poster,
       production: obj.Production,
       rated: obj.Rated,
       released: obj.Released,
-      rottentomatoes: obj.Ratings[1].Value,
+      // rottentomatoes: obj.Ratings[1].Value,
       runtime: obj.Runtime,
       title: obj.Title,
       type: obj.Type,
       website: obj.Website,
       writer: obj.Writer
+    }
+    console.log(obj);
+    // if (obj.Ratings)
+    if (obj.Ratings.length < 3) {
+      for (let x = 0; x < obj.Ratings.length; x++) {
+        if ('Internet Movie Database' === obj.Ratings[x].Source) {
+          vm.objectToSend['internetmoviedatabase'] = obj.Ratings[x].Value;
+        }
+        if ('Rotten Tomatoes' === obj.Ratings[x].Source) {
+          vm.objectToSend['rottentomatoes'] = obj.Ratings[x].Value;
+        }
+        if ('Metacritic' === obj.Ratings[x].Source) {
+          vm.objectToSend['metacritic'] = obj.Ratings[x].Value;
+        }
+      }
     }
     console.log(vm.objectToSend);
     return $http({
@@ -55,6 +70,21 @@ movieApp.service('dataBaseService', function($http) {
     })
     .catch(function(error) {
       console.log(`Error getting movieList from db ${error}`);
+    })
+  }
+
+  vm.getMovieByGenre = function(genre) {
+    console.log(genre);
+    return $http({
+      method: 'GET',
+      url: `/movie/`,
+      params: genre
+    })
+    .then(function(response) {
+      return response;
+    })
+    .catch(function(error) {
+      console.log(`Error getting movieList by genre from db ${error}`);
     })
   }
 

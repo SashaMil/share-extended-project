@@ -12,8 +12,9 @@ movieApp.config(function($routeProvider, $sceDelegateProvider, $mdThemingProvide
     templateUrl: '/views/home.html'
   }).when('/display', {
     templateUrl: '/views/display.html'
-  })
-  .otherwise({
+  }).when('/genre', {
+    templateUrl: '/views/genreTally.html'
+  }).otherwise({
     template: '<h1>404</h1>'
   })
 });

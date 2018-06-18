@@ -37,12 +37,10 @@ router.put('/', (req, res) => {
 
 
 router.get('/', (req, res) => {
-
   const possibleQuery = req.query.q;
-  let queryText2 = 'SELECT * FROM movie WHERE title=$1;';
-    // pool.query(queryText2, [possibleQuery])
+  console.log('cheetah', parseString);
+  let queryText2 = 'SELECT * FROM movie WHERE movie.genre.=$1;';
   let queryText = 'SELECT * FROM movie;';
-    // pool.query(queryText);
 
   let func1 = function() {
     if (possibleQuery) {
