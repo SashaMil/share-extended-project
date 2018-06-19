@@ -73,21 +73,6 @@ movieApp.service('dataBaseService', function($http) {
     })
   }
 
-  vm.getMovieByGenre = function(genre) {
-    console.log(genre);
-    return $http({
-      method: 'GET',
-      url: `/movie/`,
-      params: genre
-    })
-    .then(function(response) {
-      return response;
-    })
-    .catch(function(error) {
-      console.log(`Error getting movieList by genre from db ${error}`);
-    })
-  }
-
   vm.putMovie = function(obj) {
     console.log(obj);
     return $http({

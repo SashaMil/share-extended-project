@@ -37,19 +37,19 @@ router.put('/', (req, res) => {
 
 
 router.get('/', (req, res) => {
-  const possibleQuery = req.query.q;
-  console.log('cheetah', parseString);
-  let queryText2 = 'SELECT * FROM movie WHERE movie.genre.=$1;';
+  // const possibleQuery = req.query.q;
+  // console.log('cheetah', parseString);
+  // let queryText2 = 'SELECT * FROM movie WHERE movie.genre.=$1;';
   let queryText = 'SELECT * FROM movie;';
-
-  let func1 = function() {
-    if (possibleQuery) {
-      return pool.query(queryText2, [possibleQuery]);
-    } else {
-      return pool.query(queryText);
-    }
-  }
-  func1()
+  // let func1 = function() {
+  //   if (possibleQuery) {
+  //     return pool.query(queryText2, [possibleQuery]);
+  //   } else {
+  //     return pool.query(queryText);
+  //   }
+  // }
+  // func1()
+  return pool.query(queryText)
   .then((result) => {
     console.log(result.rows);
     res.send(result.rows);
